@@ -173,7 +173,29 @@ class AppDB {
   }
 }
 
-// Initialize the SDK for the app
- export default function (developerKey) {
+
+function initializeApp(developerKey) {
   return new AppDB('/proxy', developerKey);
-};
+}
+
+// Create getApp as a universal function
+function getApp(developerKey) {
+  if (!developerKey) {
+    throw new Error('Developer key must be provided to initialize the app.');
+  }
+  return initializeApp(developerKey);
+}
+
+// Universal Export
+if (typeof window !== 'undefined') {
+  // Running in a browser
+  window.getApp = getApp;
+} else if (typeof module !== 'undefined' && module.exports) {
+  // Running in Node.js or CommonJS
+  module.exports = getApp;
+} else if (typeof define === 'function' && define.amd) {
+  // For AMD (like RequireJS)
+  define(function () {
+    return getApp;
+  });
+}
