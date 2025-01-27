@@ -5,7 +5,7 @@ const port = 3000;
 
 // Middleware to parse JSON payloads
 app.use(express.json());
-
+ 
 // Middleware to set CORS headers
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*'); // Allow all origins
