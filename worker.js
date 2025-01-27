@@ -9,7 +9,7 @@ self.addEventListener('fetch', function (event) {
   if (url.pathname.endsWith('/worker-endpoint') && event.request.method === 'POST') {
     event.respondWith(
       (async () => {
-        try {
+        try { 
           const requestData = await event.request.json();
           if (requestData.action === 'SETDEV') {
             return setDeveloper(requestData.key, requestData.data)
