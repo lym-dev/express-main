@@ -6,7 +6,7 @@ function generateUUID() {
   });
 }
 
-function getID() {
+function getID() { 
   let uuid = localStorage.getItem('uuid');
   if (!uuid) {
     uuid = generateUUID();
