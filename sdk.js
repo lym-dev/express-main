@@ -175,7 +175,7 @@ class AppDB {
 
 
 function initializeApp(developerKey) {
-  return new AppDB('/proxy', developerKey);
+  return new AppDB('https://lym-dev.github.io/express-main/proxy', developerKey);
 }
 
 // Create getApp as a universal function
