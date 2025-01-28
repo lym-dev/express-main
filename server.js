@@ -19,7 +19,7 @@ app.post('/proxy', async (req, res) => {
   try {
     // Forward the request to the service worker
     const response = await axios.post(
-      'https://lym-dev.github.io/express-main/worker-endpoint', // Replace with your service worker URL
+      'https://lym-dev.github.io/express-main/worker.js/worker-endpoint', // Replace with your service worker URL
       req.body, // Forward the request body as is
       {
         headers: {
