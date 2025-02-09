@@ -15,7 +15,7 @@ app.use((req, res, next) => {
 });
 
 // POST route to forward requests to the service worker
-app.post('/proxy', async (req, res) => {
+app.post('/', async (req, res) => {
   try {
     // Forward the request to the service worker
     const response = await axios.post(
