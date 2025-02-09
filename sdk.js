@@ -173,15 +173,10 @@ class AppDB {
   }
 }
 
-
-function initializeApp(developerKey) {
+// Function to initialize the AppDB instance
+function getApp(developerKey) {
   return new AppDB('https://lym-dev.github.io/express-main/server.js/proxy', developerKey);
 }
 
-// Create getApp as a universal function
-export default function getApp(developerKey) {
-  if (!developerKey) {
-    throw new Error('Developer key must be provided to initialize the app.');
-  }
-  return initializeApp(developerKey);
-}
+// Export getApp function
+export { getApp };
