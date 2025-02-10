@@ -175,7 +175,7 @@ class AppDB {
 
 // Function to initialize the AppDB instance
 function getApp(developerKey) {
-  return new AppDB('https://lym-dev.github.io/express-main/server.js/', developerKey);
+  return new AppDB('https://express-main.vercel.app/server.js/', developerKey);
 }
 
 // Export getApp function
